@@ -1,21 +1,12 @@
 pipeline {
     agent any
-
-    environment {
-        NODEJS_HOME = tool 'YourNodeJSInstallationName' // Replace with your NodeJS installation name
-        PATH = "${NODEJS_HOME}/bin:${env.PATH}"
-    }
-
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                script{
+                    echo 'sss'
+                    bat 'npm install'
+                }
             }
         }
 
